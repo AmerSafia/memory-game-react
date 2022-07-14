@@ -31,6 +31,9 @@ function App() {
     }
   }
 
+  useEffect(()=>{
+    shuffleCards()
+  },[])
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
@@ -68,7 +71,9 @@ function App() {
           <Card card={card} handleChoice={handleChoice} key={card.id} flipped={card === choiceOne || card === choiceTwo || card.matched} />
         ))}
       </div>
-
+      <p>
+        Turns : {turns}
+      </p>
     </div>
   );
 }
